@@ -13,7 +13,7 @@ Crea una app para buscar pelis
 
 API a usar:
 https://www.omdbapi.com/
-API_KEY: 4287ad07
+API_KEY: [.env.local] ## please,submit an API key
 
 Requirements
 - Need un input y un botón p/buscar pelis

@@ -6,7 +6,7 @@ function App() {
     <>
       <div className='page' >
         <header>
-      <h1>Busca Pelis</h1>
+      <h1>Busca Pelis Ultimate!!</h1>
           <form action="">
             <input
               type="text"
