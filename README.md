@@ -30,3 +30,6 @@ Primera iteración
 
 zsh: npm create@latest (con React + JS+SWC alternativa a Babel con Rust)
 
+useRef()
+Es un hook que nos permite crear una referencia mutable que persiste durante todo el ciclo de vida del componente, es decir no se reinicia. Es muy útil para guardar cualquier valor que podamos mutar, como un identificador, un elemento del DOM, como un contador,etc, que cada vez que cambia, no vuelve a renderizar el componente. Esto lo hace diferente al useState(), el cual cada vez que cambia, vuelve a renderizar el componente.
+
