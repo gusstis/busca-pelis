@@ -17,7 +17,7 @@ API_KEY: [.env.local] ## please,submit an API key
 
 Requirements
 - Need un input y un botón p/buscar pelis
-- Lista las pelis encontradas y muestra Titlr, year, poster.
+- Lista las pelis encontradas y muestra Title, year, poster.
 - Haz que las pelis se muestren en un grid responsive.
 
 Primera iteración
