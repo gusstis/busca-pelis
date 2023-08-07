@@ -22,7 +22,7 @@ Requirements
 
 Primera iteración
 
-- Evira que se haga la misma búsqueda 2 veces seguidas
+- Evita que se haga la misma búsqueda 2 veces seguidas
 - Que la búsqueda se haga automáticamente al escribir
 - Evita que la búsqueda se haga continuamente al escribir (debounce)
 
