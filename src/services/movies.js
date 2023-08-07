@@ -18,7 +18,7 @@ export const searchMovies = async ({search}) => {
           poster: movie.Poster
         }))
     } catch (e) {
-        throw new Error('Error searching movies')
+        throw new Error('Error searching movies') //ToDo manejo de errores
     }
 
 }    
