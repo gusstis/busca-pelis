@@ -4,7 +4,6 @@ const apiKey = import.meta.env.VITE_API_KEY
 
 export const searchMovies = async ({search}) => {
     if (search === '') return null
-    console.log(apiKey)
 
     try {
         const response = await fetch(`https://www.omdbapi.com/?apikey=${apiKey}&s=${search}`)
@@ -15,7 +14,7 @@ export const searchMovies = async ({search}) => {
           id: movie.imdbID,
           title: movie.Title,
           year: movie.Year,
-          poster: movie.Poster
+          image: movie.Poster
         }))
     } catch (e) {
         throw new Error('Error searching movies') //ToDo manejo de errores

@@ -1,4 +1,4 @@
-export function ListOfMovies ({movies}) {
+function ListOfMovies ({movies}) {
     return (
       <ul className="movies" >
         {
@@ -6,7 +6,7 @@ export function ListOfMovies ({movies}) {
                     <li className="movie" key={movie.id} >
                       <h3> {movie.title} </h3>
                       <p> {movie.year} </p>
-                       <img src={movie.poster} alt={movie.Title} />
+                       <img src={movie.image} alt={movie.title} />
                      </li>
                       ))
         }
@@ -15,10 +15,8 @@ export function ListOfMovies ({movies}) {
     }
 
   export function NoMoviesResults  ()  {
-
-    
     return (
-      <p>No se encontraron pelis en esta bñusqueda</p>
+      <p>No se encontraron pelis en esta búsqueda</p>
     )
   }
 
