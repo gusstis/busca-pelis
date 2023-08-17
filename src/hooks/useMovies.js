@@ -1,4 +1,4 @@
-import {useRef, useState, useMemo} from 'react'
+import {useRef, useState, useMemo, useCallback} from 'react'
 import {searchMovies} from '../services/movies';
 
 export function useMovies ({search, sort}) {
@@ -8,9 +8,9 @@ export function useMovies ({search, sort}) {
     const previousSearch = useRef(search)
     // No se estaría usando el error
   
-    const getMovies = useMemo (() => {
-      return async ({search}) => {
+    const getMovies = useCallback (async ({search}) => {
       if ( search === previousSearch.current ) return
+      // search es ''
       try {
         setLoading(true)
         setError(null)
@@ -24,7 +24,6 @@ export function useMovies ({search, sort}) {
         //esto se ejecuta tanto en el try como en el catch
         setLoading(false)
       }
-    }
   }, [])
 
     /*{const getSortedMovies = () => {
