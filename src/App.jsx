@@ -37,7 +37,7 @@ function App() {
 
   const handleSubmit = (event ) => {
     event.preventDefault()
-      getMovies()
+      getMovies({search})
   }
 
  const handleSort = () => {
@@ -48,6 +48,10 @@ function App() {
     const newSearch = (event.target.value)
     updateSearch(newSearch)
   }
+  useEffect(() => {
+    console.log('new Get Movis received')
+  
+  }, [getMovies])
   
   return (
     <>

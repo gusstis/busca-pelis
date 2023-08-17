@@ -8,7 +8,8 @@ export function useMovies ({search, sort}) {
     const previousSearch = useRef(search)
     // No se estaría usando el error
   
-    const getMovies = async () => {
+    const getMovies = useMemo (() => {
+      return async ({search}) => {
       if ( search === previousSearch.current ) return
       try {
         setLoading(true)
@@ -24,6 +25,7 @@ export function useMovies ({search, sort}) {
         setLoading(false)
       }
     }
+  }, [])
 
     /*{const getSortedMovies = () => {
       console.log('getSortedMoviessss')
