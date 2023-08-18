@@ -1,7 +1,8 @@
 import './App.css';
 import { Movies } from './components/Movies';
 import {useMovies} from './hooks/useMovies'
-import {useState, useEffect, useRef} from 'react';
+import {useState, useEffect, useRef, useCallback} from 'react';
+import debounce from 'just-debounce-it';
 
 function useSearch() {
   const [search, updateSearch] = useState('')
@@ -35,6 +36,13 @@ function App() {
   const { search, updateSearch, error } = useSearch()
   const { movies,loading, getMovies } = useMovies({search, sort})
 
+  const debouncedGetMovies = useCallback(
+    debounce(search => {
+    console.log('search', search)
+    getMovies({search})
+  }, 300)
+  , [getMovies]) //en realidad no hace falta agregar getMovies as dependecy, no cambia
+
   const handleSubmit = (event ) => {
     event.preventDefault()
       getMovies({search})
@@ -47,11 +55,8 @@ function App() {
   const handleChange = (event) => {
     const newSearch = (event.target.value)
     updateSearch(newSearch)
+    debouncedGetMovies( newSearch )
   }
-  useEffect(() => {
-    console.log('new Get Movis received')
-  
-  }, [getMovies])
   
   return (
     <>
